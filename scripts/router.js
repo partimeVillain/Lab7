@@ -47,7 +47,7 @@ router.setState = function(state, parent) {
   //checking for states
   if(state.name == "home" || state == null) {
     page.innerText = "Journal Entries";
-    link = window.location.origin;
+    link = 'https://partimevillain.github.io/Lab7/';
 
   }
   else if (state.name == 'setting'){
