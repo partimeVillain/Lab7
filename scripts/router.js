@@ -39,14 +39,22 @@ router.setState = function(state, parent) {
   let page = document.querySelector('h1');
   let setting = document.querySelector('img');
   let body = document.querySelector('body');
+  if(body.querySelectorAll("entry-page").length>0){
+    body.removeChild(body.querySelectorAll("entry-page")[0]);
+  }
   body.classList = null;
   let link = '';
   //checking for states
   if(state.name == "home" || state == null) {
     page.innerText = "Journal Entries";
     link = window.location.origin;
+
   }
   else if (state.name == 'setting'){
+    //document.querySelector('entry-page').remove();
+    if(body.querySelectorAll("entry-page").length>0){
+      body.removeChild(body.querySelectorAll("entry-page")[0]);
+    }
     body.classList.add("settings");
     page.innerText = "Settings";
     link ='/#settings';            //constructing url
@@ -55,7 +63,7 @@ router.setState = function(state, parent) {
     let entryPage = document.createElement('entry-page');     //constructing entry-page
     body.classList.add("single-entry");
     //remove previous entry-page
-    document.querySelector('entry-page').remove();
+    //document.querySelector('entry-page').remove();
     entryPage.entry = document.getElementById(state.id).entry;
    
     body.appendChild(entryPage);
