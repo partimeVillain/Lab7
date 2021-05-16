@@ -6,7 +6,7 @@
 //   - One for fetch requests
 
 var Cache= 'lab7-cache-v1';
-var url = 'https://cse110lab6.herokuapp.com/entries'
+var url = ['https://cse110lab6.herokuapp.com/entries'];
 
 
 self.addEventListener('install', function(e) {
