@@ -52,9 +52,6 @@ router.setState = function(state, parent) {
   }
   else if (state.name == 'setting'){
     //document.querySelector('entry-page').remove();
-    if(body.querySelectorAll("entry-page").length>0){
-      body.removeChild(body.querySelectorAll("entry-page")[0]);
-    }
     body.classList.add("settings");
     page.innerText = "Settings";
     link ='/#settings';            //constructing url
